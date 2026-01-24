@@ -103,7 +103,7 @@ public class ArrayListProblems {
         System.out.println(lst2);
 
         System.out.println("\nCount how many times a number appears.");
-        List lst3 = new ArrayList<>(List.of(1,2,3,1,5,1,2,1,3,2,5,2));
+        List<Integer> lst3 = new ArrayList<>(List.of(1,2,3,1,5,1,2,1,3,2,5,2));
         int toCnt=2;
         int cnt1=0;
         for(int i=0; i<lst3.size();i++)
@@ -116,7 +116,13 @@ public class ArrayListProblems {
         System.out.println("2 appeared " + cnt1 + " times in given arraylist");
 
         System.out.println("\nMerge two ArrayLists.");
+        List<Integer> lst5 = new ArrayList<>(List.of(1,2,3,1,5,1));
+        List<Integer> lst6 = new ArrayList<>(List.of(1,2,3,1,5,1,2,1,3,2,5,2));
+        lst5.addAll(lst5.size(), lst6);
+        System.out.println(lst5);
+
 
         System.out.println("\nFind the second largest element.");
+
     }
 }
