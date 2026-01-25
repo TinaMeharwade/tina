@@ -152,6 +152,15 @@ public class ArrayListProblems2 {
         System.out.println(merged);
 
         System.out.println("\nFind the median of two sorted ArrayLists.");
+        double meridian=0.0;
+        int sz = merged.size();
+        if(sz%2==0)
+        {
+            meridian= (merged.get(sz/2-1)+merged.get(sz/2))/2.0;
+        }else{
+            meridian=merged.get(sz/2);
+        }
+        System.out.println("the median of two sorted ArrayLists : " + meridian);
 
         System.out.println("\nRearrange positives and negatives alternately.");
 
