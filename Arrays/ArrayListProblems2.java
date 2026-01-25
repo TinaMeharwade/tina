@@ -100,10 +100,56 @@ public class ArrayListProblems2 {
         }
 
         System.out.println("\nFind all triplets with a given sum.");
+        int needed = 0;
+        List<Integer> lst2 = new ArrayList<>(List.of(1, 2, -2, 0, -1, 1));
+        Collections.sort(lst2);
+        //-2 -1 0 1 2
+
+        for(int i=0;i<lst2.size()-2;i++) {
+
+            int left=i+1;
+            int right=lst2.size()-1;
+
+            while(left<right)
+            {
+                int sum = lst2.get(i) + lst2.get(left) + lst2.get(right);
+
+                if(sum==needed)
+                {
+                    System.out.println(lst2.get(i) + " " + lst2.get(left) + " " + lst2.get(right) + " ");
+                    left++;
+                    right--;
+                }
+                else if(sum<needed)
+                {
+                    left++;
+                }else{
+                    right--;
+                }
+            }
+        }
+
 
         System.out.println("\nRemove duplicates but keep last occurrence.");
 
         System.out.println("\nMerge two sorted ArrayLists.");
+        List<Integer> l1 = new ArrayList<>(List.of(1,3,5));
+        List<Integer> l2 = new ArrayList<>(List.of(2,4,6));
+        List<Integer> merged = new ArrayList<>();
+        int i=0, j=0;
+        while(i<l1.size()&&j<l2.size())
+        {
+            if(l1.get(i)<=l2.get(j))
+            {
+                merged.add(l1.get(i++));
+            }else{
+                merged.add(l2.get(j++));
+            }
+        }
+        while (i < l1.size()) merged.add(l1.get(i++));
+        while (j < l2.size()) merged.add(l2.get(j++));
+
+        System.out.println(merged);
 
         System.out.println("\nFind the median of two sorted ArrayLists.");
 
